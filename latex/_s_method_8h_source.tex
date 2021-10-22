@@ -1,0 +1,48 @@
+\hypertarget{_s_method_8h_source}{}\doxysection{SMethod.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef ARCS\_SMETHOD\_H}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define ARCS\_SMETHOD\_H}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <cstdio>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_s_method}{SMethod}} \{}
+\DoxyCodeLine{19 \textcolor{keyword}{public}:}
+\DoxyCodeLine{20     \mbox{\hyperlink{class_s_method_ad31bc21f6756e11ad97f9f4c01a3803b}{SMethod}}(\textcolor{keywordtype}{int} PulsePerRevolution, \textcolor{keywordtype}{double} SamplingTime, \textcolor{keywordtype}{double} CutOffFrequency);}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_s_method_a6ab26b1b31c9361e0c6a885bdd0631cc}{\string~SMethod}}();}
+\DoxyCodeLine{22     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_s_method_a72727a41bce002d001d997819ab82f74}{GetSpeed}}(\textcolor{keywordtype}{int} Pulse);}
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_s_method_a14bdfb40e5f8ffc4f9e72e7b064eaf0d}{SetCPR}}(\textcolor{keywordtype}{int} PulsePerRevolution);}
+\DoxyCodeLine{24     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_s_method_a91c35b30fb2b8fbf819f1e23dbb67183}{SetSamplTime}}(\textcolor{keywordtype}{double} SamplingTime);}
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_s_method_aba5219ae6216c34521e2772f60f6d4b6}{SetCutOffFreq}}(\textcolor{keywordtype}{double} CutOffFrequency);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{private}:}
+\DoxyCodeLine{28     \textcolor{comment}{//計算した速度}}
+\DoxyCodeLine{29     std::vector<double> wm \{0.0\};}
+\DoxyCodeLine{30     \textcolor{comment}{//一周のパルス数}}
+\DoxyCodeLine{31     \textcolor{keywordtype}{int} P;}
+\DoxyCodeLine{32     \textcolor{comment}{//サンプリング時間}}
+\DoxyCodeLine{33     \textcolor{keywordtype}{double} Ts;}
+\DoxyCodeLine{34     \textcolor{comment}{//カットオフ周波数}}
+\DoxyCodeLine{35     \textcolor{keywordtype}{double} Gv;}
+\DoxyCodeLine{36     \textcolor{comment}{//LPF前の速度}}
+\DoxyCodeLine{37     \textcolor{keywordtype}{double} wm\_ = 0.0;}
+\DoxyCodeLine{38     \textcolor{comment}{//パルスバッファ}}
+\DoxyCodeLine{39     \textcolor{keywordtype}{int} PulseBuf = 0;}
+\DoxyCodeLine{40     \textcolor{comment}{//パルス数バッファ}}
+\DoxyCodeLine{41     std::vector<int> Me;}
+\DoxyCodeLine{42     \textcolor{comment}{//2つの連続したパルス変動間のサンプル数}}
+\DoxyCodeLine{43     \textcolor{keywordtype}{int} Ms = 0;}
+\DoxyCodeLine{44     \textcolor{comment}{//速度計算をリセットするフラグ}}
+\DoxyCodeLine{45     \textcolor{keywordtype}{bool} ResetFlag = \textcolor{keyword}{false};}
+\DoxyCodeLine{46     \textcolor{comment}{//初回実行時のフラグ}}
+\DoxyCodeLine{47     \textcolor{keywordtype}{bool} FirstFlag = \textcolor{keyword}{true};}
+\DoxyCodeLine{48 \};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//ARCS\_SMETHOD\_H}}
+
+\end{DoxyCode}

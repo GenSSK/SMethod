@@ -1,0 +1,124 @@
+\hypertarget{class_s_method}{}\doxysection{SMethod Class Reference}
+\label{class_s_method}\index{SMethod@{SMethod}}
+
+
+S Methodで速度を計算するクラス  
+
+
+
+
+{\ttfamily \#include $<$SMethod.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_method_ad31bc21f6756e11ad97f9f4c01a3803b}{SMethod}} (int Pulse\+Per\+Revolution, double Sampling\+Time, double Cut\+Off\+Frequency)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_s_method_a6ab26b1b31c9361e0c6a885bdd0631cc}\label{class_s_method_a6ab26b1b31c9361e0c6a885bdd0631cc}} 
+{\bfseries $\sim$\+SMethod} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_s_method_a72727a41bce002d001d997819ab82f74}{Get\+Speed}} (int Pulse)
+\begin{DoxyCompactList}\small\item\em 速度を計算する関数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_method_a14bdfb40e5f8ffc4f9e72e7b064eaf0d}{Set\+CPR}} (int Pulse\+Per\+Revolution)
+\begin{DoxyCompactList}\small\item\em 一回転のエンコーダのパルス数をセットする関数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_method_a91c35b30fb2b8fbf819f1e23dbb67183}{Set\+Sampl\+Time}} (double Sampling\+Time)
+\begin{DoxyCompactList}\small\item\em サンプリング時間をセットする関数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_method_aba5219ae6216c34521e2772f60f6d4b6}{Set\+Cut\+Off\+Freq}} (double Cut\+Off\+Frequency)
+\begin{DoxyCompactList}\small\item\em カットオフ周波数をセットする関数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+S Methodで速度を計算するクラス 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_s_method_ad31bc21f6756e11ad97f9f4c01a3803b}\label{class_s_method_ad31bc21f6756e11ad97f9f4c01a3803b}} 
+\index{SMethod@{SMethod}!SMethod@{SMethod}}
+\index{SMethod@{SMethod}!SMethod@{SMethod}}
+\doxysubsubsection{\texorpdfstring{SMethod()}{SMethod()}}
+{\footnotesize\ttfamily SMethod\+::\+SMethod (\begin{DoxyParamCaption}\item[{int}]{Pulse\+Per\+Revolution,  }\item[{double}]{Sampling\+Time,  }\item[{double}]{Cut\+Off\+Frequency }\end{DoxyParamCaption})}
+
+
+
+コンストラクタ 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Pulse\+Per\+Revolution} & 一回転のエンコーダのパルス数\mbox{[}Pulses\mbox{]} \\
+\hline
+\mbox{\texttt{ in}}  & {\em Sampling\+Time} & サンプリング時間\mbox{[}sec\mbox{]} \\
+\hline
+\mbox{\texttt{ in}}  & {\em Cut\+Off\+Frequency} & カットオフ周波数\mbox{[}rad/s\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_s_method_a72727a41bce002d001d997819ab82f74}\label{class_s_method_a72727a41bce002d001d997819ab82f74}} 
+\index{SMethod@{SMethod}!GetSpeed@{GetSpeed}}
+\index{GetSpeed@{GetSpeed}!SMethod@{SMethod}}
+\doxysubsubsection{\texorpdfstring{GetSpeed()}{GetSpeed()}}
+{\footnotesize\ttfamily double SMethod\+::\+Get\+Speed (\begin{DoxyParamCaption}\item[{int}]{Pulse }\end{DoxyParamCaption})}
+
+
+
+速度を計算する関数 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Pulse} & パルス数\mbox{[}Pulses\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double 速度\mbox{[}rad/s\mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_s_method_a14bdfb40e5f8ffc4f9e72e7b064eaf0d}\label{class_s_method_a14bdfb40e5f8ffc4f9e72e7b064eaf0d}} 
+\index{SMethod@{SMethod}!SetCPR@{SetCPR}}
+\index{SetCPR@{SetCPR}!SMethod@{SMethod}}
+\doxysubsubsection{\texorpdfstring{SetCPR()}{SetCPR()}}
+{\footnotesize\ttfamily void SMethod\+::\+Set\+CPR (\begin{DoxyParamCaption}\item[{int}]{Pulse\+Per\+Revolution }\end{DoxyParamCaption})}
+
+
+
+一回転のエンコーダのパルス数をセットする関数 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Pulse\+Per\+Revolution} & 一回転のエンコーダのパルス数\mbox{[}Pulses\mbox{]} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_s_method_aba5219ae6216c34521e2772f60f6d4b6}\label{class_s_method_aba5219ae6216c34521e2772f60f6d4b6}} 
+\index{SMethod@{SMethod}!SetCutOffFreq@{SetCutOffFreq}}
+\index{SetCutOffFreq@{SetCutOffFreq}!SMethod@{SMethod}}
+\doxysubsubsection{\texorpdfstring{SetCutOffFreq()}{SetCutOffFreq()}}
+{\footnotesize\ttfamily void SMethod\+::\+Set\+Cut\+Off\+Freq (\begin{DoxyParamCaption}\item[{double}]{Cut\+Off\+Frequency }\end{DoxyParamCaption})}
+
+
+
+カットオフ周波数をセットする関数 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Cut\+Off\+Frequency} & カットオフ周波数\mbox{[}rad/s\mbox{]} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_s_method_a91c35b30fb2b8fbf819f1e23dbb67183}\label{class_s_method_a91c35b30fb2b8fbf819f1e23dbb67183}} 
+\index{SMethod@{SMethod}!SetSamplTime@{SetSamplTime}}
+\index{SetSamplTime@{SetSamplTime}!SMethod@{SMethod}}
+\doxysubsubsection{\texorpdfstring{SetSamplTime()}{SetSamplTime()}}
+{\footnotesize\ttfamily void SMethod\+::\+Set\+Sampl\+Time (\begin{DoxyParamCaption}\item[{double}]{Sampling\+Time }\end{DoxyParamCaption})}
+
+
+
+サンプリング時間をセットする関数 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Sampling\+Time} & サンプリング時間\mbox{[}sec\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+SMethod.\+h\item 
+SMethod.\+cpp\end{DoxyCompactItemize}
