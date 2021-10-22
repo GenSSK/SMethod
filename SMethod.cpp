@@ -1,9 +1,10 @@
 /*!
- * @file    SMethodを計算するクラス
- * @brief   https://doi.org/10.1109/TIE.2008.2003208
+ * @file    SMethod.cpp
+ * @brief   SMethodを計算するクラス
  * @author  G.Sasaki
- * @data    2021/10/4
+ * @date    2021/10/4
  * @details SMethodによる計算ライブラリです．辻先生の論文を参考にしています．
+ * @remark  https://doi.org/10.1109/TIE.2008.2003208
  * */
 
 #include "SMethod.h"
