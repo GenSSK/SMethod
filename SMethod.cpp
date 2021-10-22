@@ -1,13 +1,17 @@
-//
-// Created by genki on 2021/10/04.
-//
+/*!
+ * @file    SMethodを計算するクラス
+ * @brief   https://doi.org/10.1109/TIE.2008.2003208
+ * @author  G.Sasaki
+ * @data    2021/10/4
+ * @details SMethodによる計算ライブラリです．辻先生の論文を参考にしています．
+ * */
 
 #include "SMethod.h"
 
 /*! @brief コンストラクタ
- *  @param 一回転のエンコーダのパルス数[Pulses]
- *  @param  サンプリング時間[sec]
- *  @param  カットオフ周波数[rad/s]
+ *  @param[in] PulsePerRevolution 一回転のエンコーダのパルス数[Pulses]
+ *  @param[in] SamplingTime サンプリング時間[sec]
+ *  @param[in] CutOffFrequency カットオフ周波数[rad/s]
  * */
 SMethod::SMethod(int PulsePerRevolution, double SamplingTime, double CutOffFrequency):
     P(PulsePerRevolution),
@@ -16,14 +20,15 @@ SMethod::SMethod(int PulsePerRevolution, double SamplingTime, double CutOffFrequ
     {
 }
 
-
-/*! @brief  デストラクタ
+/*!
+ * @brief  デストラクタ
  * */
 SMethod::~SMethod() = default;
 
-/*! @brief  速度を計算する関数
- *  @param  Pulse パルス数[Pulses]
- *  @return 速度[rad/s]
+/*!
+ * @brief  速度を計算する関数
+ * @param[in] Pulse パルス数[Pulses]
+ * @return double 速度[rad/s]
  * */
 double SMethod::GetSpeed(int Pulse) {
     if (FirstFlag){
@@ -73,22 +78,22 @@ double SMethod::GetSpeed(int Pulse) {
     return wm.back();
 }
 
-/*! @brief  一回転のエンコーダのパルス数をセットする関数
- *  @param  一回転のエンコーダのパルス数[Pulses]
+/*! @brief 一回転のエンコーダのパルス数をセットする関数
+ *  @param[in] PulsePerRevolution 一回転のエンコーダのパルス数[Pulses]
  * */
 void SMethod::SetCPR(int PulsePerRevolution) {
     P = PulsePerRevolution;
 }
 
-/*! @brief  サンプリング時間をセットする関数
- *  @param  サンプリング時間[sec]
+/*! @brief サンプリング時間をセットする関数
+ *  @param[in] SamplingTime サンプリング時間[sec]
  * */
 void SMethod::SetSamplTime(double SamplingTime) {
     Ts = SamplingTime;
 }
 
-/*! @brief  カットオフ周波数をセットする関数
- *  @param  カットオフ周波数[rad/s]
+/*! @brief カットオフ周波数をセットする関数
+ *  @param[in] CutOffFrequency カットオフ周波数[rad/s]
  * */
 void SMethod::SetCutOffFreq(double CutOffFrequency) {
     Gv = CutOffFrequency;

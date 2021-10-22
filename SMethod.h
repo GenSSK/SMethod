@@ -1,6 +1,10 @@
-//
-// Created by genki on 2021/10/04.
-//
+/*!
+ * @file    SMethodを計算するクラスを利用するためのヘッダ
+ * @brief   https://doi.org/10.1109/TIE.2008.2003208
+ * @author  G.Sasaki
+ * @data    2021/10/4
+ * @details SMethodによる計算ライブラリです．辻先生の論文を参考にしています．
+ * */
 
 #ifndef ARCS_SMETHOD_H
 #define ARCS_SMETHOD_H
@@ -21,15 +25,25 @@ public:
     void SetCutOffFreq(double CutOffFrequency);
 
 private:
-    std::vector<double> wm {0.0};  //計算した速度
-    int P;    //一周のパルス数
-    double Ts;  //サンプリング時間
-    double Gv; //カットオフ周波数
+    //計算した速度
+    std::vector<double> wm {0.0};
+    //一周のパルス数
+    int P;
+    //サンプリング時間
+    double Ts;
+    //カットオフ周波数
+    double Gv;
+    //LPF前の速度
     double wm_ = 0.0;
-    int PulseBuf = 0; //パルスバッファ
-    std::vector<int> Me;    //パルス数バッファ
-    int Ms = 0; //2つの連続したパルス変動間のサンプル数
-    bool ResetFlag = false; //速度計算をリセットするフラグ
+    //パルスバッファ
+    int PulseBuf = 0;
+    //パルス数バッファ
+    std::vector<int> Me;
+    //2つの連続したパルス変動間のサンプル数
+    int Ms = 0;
+    //速度計算をリセットするフラグ
+    bool ResetFlag = false;
+    //初回実行時のフラグ
     bool FirstFlag = true;
 };
 
