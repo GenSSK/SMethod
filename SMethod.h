@@ -17,35 +17,25 @@
 
 //! @brief S Methodで速度を計算するクラス
 class SMethod {
-public:
-    SMethod(int PulsePerRevolution, double SamplingTime, double CutOffFrequency);
-    ~SMethod();
-    double GetSpeed(int Pulse);
-    void SetCPR(int PulsePerRevolution);
-    void SetSamplTime(double SamplingTime);
-    void SetCutOffFreq(double CutOffFrequency);
+ public:
+	SMethod(int PulsePerRevolution, double SamplingTime, double CutOffFrequency);
+	~SMethod();
+	double GetSpeed(int Pulse);
+	void SetCPR(int PulsePerRevolution);
+	void SetSamplTime(double SamplingTime);
+	void SetCutOffFreq(double CutOffFrequency);
 
-private:
-    //計算した速度
-    std::vector<double> wm {0.0};
-    //一周のパルス数
-    int P;
-    //サンプリング時間
-    double Ts;
-    //カットオフ周波数
-    double Gv;
-    //LPF前の速度
-    double wm_ = 0.0;
-    //パルスバッファ
-    int PulseBuf = 0;
-    //パルス数バッファ
-    std::vector<int> Me;
-    //2つの連続したパルス変動間のサンプル数
-    int Ms = 0;
-    //速度計算をリセットするフラグ
-    bool ResetFlag = false;
-    //初回実行時のフラグ
-    bool FirstFlag = true;
+ private:
+	std::vector<double> wm {0.0};  //!<計算した速度
+	int P;					//!<一周のパルス数
+	double Ts; 				//!<サンプリング時間
+	double Gv;				//!<カットオフ周波数
+	double wm_ = 0.0;       //!<LPFする前の速度
+	int PulseBuf = 0; 		//!<パルスバッファ
+	std::vector<int> Me;    //!<パルス数バッファ
+	int Ms = 0; 			//!<2つの連続したパルス変動間のサンプル数
+	bool ResetFlag = false; //!<速度計算をリセットするフラグ
+	bool FirstFlag = true;  //!<初回実行時のフラグ
 };
 
 
