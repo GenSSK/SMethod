@@ -9,18 +9,16 @@
 
 
 #include "SMethod.h"
+#define M_PI 3.141592
 
 SMethod::SMethod(int PulsePerRevolution, double SamplingTime, double CutOffFrequency):
 	P(PulsePerRevolution),
 	Ts(SamplingTime),
 	Gv(CutOffFrequency)
 {
+	 ResetFlag = false;
+	 FirstFlag = true;
 }
-
-
-/*! @brief  デストラクタ
- * */
-SMethod::~SMethod() = default;
 
 /*! @brief  速度を計算する関数
  *  @param  Pulse パルス数[Pulses]
@@ -94,4 +92,3 @@ void SMethod::SetSamplTime(double SamplingTime) {
 void SMethod::SetCutOffFreq(double CutOffFrequency) {
 	Gv = CutOffFrequency;
 }
-
