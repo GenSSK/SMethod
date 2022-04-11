@@ -7,15 +7,19 @@
  * @remark  https://doi.org/10.1109/TIE.2008.2003208
  * */
 
-#ifndef ARCS_SMETHOD_H
-#define ARCS_SMETHOD_H
+#ifndef SMETHOD_H
+#define SMETHOD_H
 
 #include <vector>
 #include <cmath>
 #include <cstdio>
 #include <iostream>
 
-//! @brief S Methodで速度を計算するクラス
+/*! @brief S Methodで速度を計算するクラス
+ *  @param 一回転のエンコーダのパルス数[Pulses]
+ *  @param  サンプリング時間[sec]
+ *  @param  カットオフ周波数[rad/s]
+ * */
 class SMethod {
  public:
 	SMethod(int PulsePerRevolution, double SamplingTime, double CutOffFrequency);
@@ -39,4 +43,4 @@ class SMethod {
 };
 
 
-#endif //ARCS_SMETHOD_H
+#endif //SMETHOD_H

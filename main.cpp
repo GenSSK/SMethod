@@ -11,7 +11,7 @@
 int main(){
 	double pulse = 0.0; //エンコーダのパルス数[pulses]
 	double wm = 0.0;    //角速度[rad/s]
-	SMethod sm{1000, 0.001, 300};   //初期化する
+	SMethod sm{1000, 0.001, 300};
 
 	/* 制御ループ */
 	while(true){

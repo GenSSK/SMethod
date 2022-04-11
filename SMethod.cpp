@@ -10,11 +10,6 @@
 
 #include "SMethod.h"
 
-/*! @brief コンストラクタ
- *  @param 一回転のエンコーダのパルス数[Pulses]
- *  @param  サンプリング時間[sec]
- *  @param  カットオフ周波数[rad/s]
- * */
 SMethod::SMethod(int PulsePerRevolution, double SamplingTime, double CutOffFrequency):
 	P(PulsePerRevolution),
 	Ts(SamplingTime),
