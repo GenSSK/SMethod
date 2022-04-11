@@ -1,15 +1,18 @@
 /*!
  * @file    SMethod.cpp
- * @brief   SMethodを計算するクラス
+ * @brief   .cpp file for using the class that calculates S method
  * @author  G.Sasaki
  * @date    2021/10/4
- * @details SMethodによる計算ライブラリです．辻先生の論文を参考にしています．
+ * @details Measurement velocity by S method. This program refers to Dr. Tsuji's paper.
  * @remark  https://doi.org/10.1109/TIE.2008.2003208
  * */
 
 
 #include "SMethod.h"
 
+/*!
+ * @brief  Constructor
+ * */
 SMethod::SMethod(int PulsePerRevolution, double SamplingTime, double CutOffFrequency):
 	P(PulsePerRevolution),
 	Ts(SamplingTime),
@@ -17,14 +20,14 @@ SMethod::SMethod(int PulsePerRevolution, double SamplingTime, double CutOffFrequ
 {
 }
 
-
-/*! @brief  デストラクタ
+/*!
+ * @brief  Destructor
  * */
 SMethod::~SMethod() = default;
 
-/*! @brief  速度を計算する関数
- *  @param  Pulse パルス数[Pulses]
- *  @return 速度[rad/s]
+/*! @brief  function of measurement velocity
+ *  @param  Pulses [Pulses]
+ *  @return velocity [rad/s]
  * */
 double SMethod::GetSpeed(int Pulse) {
 	if (FirstFlag){
@@ -34,13 +37,11 @@ double SMethod::GetSpeed(int Pulse) {
 		Ms = 2;
 	}
 
-	Me.push_back(Pulse - PulseBuf);  //パルスの偏差を挿入
+	Me.push_back(Pulse - PulseBuf);  //insert the diff pulse
 	PulseBuf = Pulse;
 
-//    Me.push_back(Pulse);  //パルスの偏差を挿入
-
 	if (!ResetFlag){
-		/* 前回のパルス数と比較 */
+		/* Compare with the previous number of pulses */
 		if (Me.back() != Me.at(Me.size() - 2)) {
 			double first = (double)Me.at(Me.size() - Ms) / 2.0;
 
@@ -74,24 +75,27 @@ double SMethod::GetSpeed(int Pulse) {
 	return wm.back();
 }
 
-/*! @brief  一回転のエンコーダのパルス数をセットする関数
- *  @param  一回転のエンコーダのパルス数[Pulses]
+/*! @brief  function that sets the pulse per revolution
+ *  @param  Pulse per revolution [Pulses]
  * */
 void SMethod::SetCPR(int PulsePerRevolution) {
 	P = PulsePerRevolution;
 }
 
-/*! @brief  サンプリング時間をセットする関数
- *  @param  サンプリング時間[sec]
+/*! @brief  function that sets the sampling time
+ *  @param  Sampling time [sec]
  * */
 void SMethod::SetSamplTime(double SamplingTime) {
 	Ts = SamplingTime;
 }
 
-/*! @brief  カットオフ周波数をセットする関数
- *  @param  カットオフ周波数[rad/s]
+/*! @brief  function that sets the cutoff frequency
+ *  @param  Cutoff frequency [rad/s]
  * */
 void SMethod::SetCutOffFreq(double CutOffFrequency) {
 	Gv = CutOffFrequency;
 }
 
+
+//Copyright (c) 2021, Genki Sasaki
+//All rights reserved.
