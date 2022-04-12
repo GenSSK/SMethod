@@ -1,4 +1,4 @@
-# C++ Class for estimating motor speed with high precision 
+# C++ Class for measurement motor velocity with high precision 
 This C++ class makes measurement motor velocity based on the S Method.
 S Method is proposed by Dr. Tsuji realizes measurement velocity with high precision using encoder pulse alteration.  
 
